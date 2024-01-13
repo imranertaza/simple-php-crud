@@ -1,7 +1,8 @@
 {
     "name": "imranertaza/simple-php-crud",
     "description": "This is a very simple php crud package.",
-    "type": "package",
+    "keywords": ["database", "pdo", "mysql", "php", "model", "oop", "crud", "php-crud", "simple-php-crud", "php7", "db", "crud", "query-builder", "php8" ],
+    "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -14,5 +15,6 @@
             "email": "imran@dnationsoft.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "version": "1.0.0"
 }
