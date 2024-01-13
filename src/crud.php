@@ -1,5 +1,7 @@
 <?php
 
+namespace PHP_CRUD;
+
 class Crud{
     public function add($tablename, $data) {
 
