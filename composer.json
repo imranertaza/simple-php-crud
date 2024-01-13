@@ -15,6 +15,10 @@
             "email": "imran@dnationsoft.com"
         }
     ],
-    "require": {},
-    "version": "1.0.0"
+    "require": {
+        "php": ">=7"
+    },
+    "version": "1.0.0",
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
