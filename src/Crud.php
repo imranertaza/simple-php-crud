@@ -1,6 +1,6 @@
 <?php
 
-namespace PHP_CRUD;
+namespace imranertaza;
 
 class Crud{
     public function add($tablename, $data) {
