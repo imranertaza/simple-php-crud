@@ -21,4 +21,4 @@ $crud = new Crud("TableName");
         ->where('c', "=",'c')
         ->groupEnd()
         ->groupEnd()
-    ->where('d', "=",'d')->get();
+        ->where('d', "=",'d')->get();
