@@ -12,7 +12,7 @@ This is a simple open-source PHP library that provides a basic implementation of
 
 ## Example
 
-$crud = new Crud("TableName");
+    $crud = new Crud("TableName");
 
     $x = $crud->groupStart()
         ->where(['a' =>'a'],"!=")
