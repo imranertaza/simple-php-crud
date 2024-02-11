@@ -18,7 +18,7 @@ $crud = new Crud("TableName");
         ->where(['a' =>'a'],"!=")
         ->NotGroupStart()
         ->orWhere('b', "=",'b')
-    ->where('c', "=",'c')
-    ->groupEnd()
-    ->groupEnd()
+        ->where('c', "=",'c')
+        ->groupEnd()
+        ->groupEnd()
     ->where('d', "=",'d')->get();
