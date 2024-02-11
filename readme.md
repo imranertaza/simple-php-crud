@@ -8,3 +8,17 @@ This is a simple open-source PHP library that provides a basic implementation of
 - **Read:** Retrieve records from the database.
 - **Update:** Modify existing records in the database.
 - **Delete:** Remove records from the database.
+
+
+## Example
+
+$crud = new Crud("TableName");
+
+$x = $crud->groupStart()
+    ->where(['a' =>'a'],"!=")
+    ->NotGroupStart()
+    ->orWhere('b', "=",'b')
+    ->where('c', "=",'c')
+    ->groupEnd()
+    ->groupEnd()
+    ->where('d', "=",'d')->get();
