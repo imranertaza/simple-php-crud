@@ -19,7 +19,6 @@ class Crud{
         return $query;
     }
 
-
     public function getData($tablename, $column, $value) {
         $allValue = "";
         for($x = 0; $x < count($column) ;$x++){
@@ -96,6 +95,7 @@ class Crud{
     private $orGroupStartStr;
     private $notGroupStartStr;
     private $orNotGroupStartStr;
+    private $groupByFiled = "";
     //STORE GROUP ALL TYPE OF GROUP
     private $group;
     //STORE GROUP CLOSE
@@ -409,6 +409,13 @@ class Crud{
         return $this;
     }
 
+    // group by
+    public function group_by(string $filed_name)
+    {
+        $this->groupByFiled .="GROUP BY $filed_name";
+        return $this;
+    }
+
     // FOR GET FINAL SQL QUERY
     public function get()
     {
@@ -417,7 +424,7 @@ class Crud{
         $join = $this->joinStr ?? "";
         $orderBy = $this->orderByStr ?? "";
         $this->groupEndStr = "";
-        $this->sql = "SELECT $select FROM $this->tableName $join $where $this->searchStr $orderBy $this->limitStr $this->offsetStr $this->groupCloseStr";
+        $this->sql = "SELECT $select FROM $this->tableName $join $where $this->searchStr $this->groupByFiled $orderBy $this->limitStr $this->offsetStr $this->groupCloseStr";
         return $this->sql;
     }
 
