@@ -95,7 +95,7 @@ class Crud{
     private $orGroupStartStr;
     private $notGroupStartStr;
     private $orNotGroupStartStr;
-    private $groupByFiled = "";
+    private $group_by = "";
     //STORE GROUP ALL TYPE OF GROUP
     private $group;
     //STORE GROUP CLOSE
@@ -410,9 +410,9 @@ class Crud{
     }
 
     // group by
-    public function group_by(string $filed_name)
+    public function group_by(string $field_name)
     {
-        $this->groupByFiled .="GROUP BY $filed_name";
+        $this->group_by .="GROUP BY $field_name";
         return $this;
     }
 
@@ -424,7 +424,7 @@ class Crud{
         $join = $this->joinStr ?? "";
         $orderBy = $this->orderByStr ?? "";
         $this->groupEndStr = "";
-        $this->sql = "SELECT $select FROM $this->tableName $join $where $this->searchStr $this->groupByFiled $orderBy $this->limitStr $this->offsetStr $this->groupCloseStr";
+        $this->sql = "SELECT $select FROM $this->tableName $join $where $this->searchStr $this->group_by $orderBy $this->limitStr $this->offsetStr $this->groupCloseStr";
         return $this->sql;
     }
 
