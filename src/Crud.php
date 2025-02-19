@@ -249,32 +249,32 @@ class Crud{
         if ($positionName === 'after'){
             if (isset( $this->whereStr)){
 
-                $this->searchStr .= "$isGroupEnd AND $field LIKE $str% ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd AND $field LIKE '$str%' ESCAPE '!'";
 
             }else{
 
                 $this->whereStr .= ' ';
-                $this->searchStr .= "$isGroupEnd $field LIKE $str% ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd $field LIKE '$str%' ESCAPE '!'";
 
             }
         }else if ($positionName === 'before'){
             if (isset( $this->whereStr)){
 
-                $this->searchStr .= "$isGroupEnd AND $field LIKE %$str ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd AND $field LIKE '%$str' ESCAPE '!'";
 
                 $this->whereStr .= ' ';
-                $this->searchStr .= "$isGroupEnd $field LIKE %$str ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd $field LIKE '%$str' ESCAPE '!'";
             }
 
         }else{
             if (isset( $this->whereStr)){
 
-                $this->searchStr .= "$isGroupEnd AND $field LIKE %$str% ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd AND $field LIKE '%$str%' ESCAPE '!'";
 
             }else{
 
                 $this->whereStr .= ' ';
-                $this->searchStr .= "$isGroupEnd $field LIKE %$str% ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd $field LIKE '%$str%' ESCAPE '!'";
 
             }
         }
@@ -288,11 +288,11 @@ class Crud{
 
         $this->groupEndStr = "";
         if ($positionName === 'after'){
-            $this->searchStr .= "$positionName OR $field LIKE $str% ESCAPE '!'";
+            $this->searchStr .= "$positionName OR $field LIKE '$str%' ESCAPE '!'";
         }else if ($positionName === 'before'){
-            $this->searchStr .= "$positionName OR $field LIKE %$str ESCAPE '!'";
+            $this->searchStr .= "$positionName OR $field LIKE '%$str' ESCAPE '!'";
         }else{
-            $this->searchStr .= "$positionName OR $field LIKE %$str% ESCAPE '!'";
+            $this->searchStr .= "$positionName OR $field LIKE '%$str%' ESCAPE '!'";
         }
         return $this;
     }
@@ -305,28 +305,28 @@ class Crud{
         $this->groupEndStr = "";
         if ($positionName === 'after'){
             if (isset( $this->whereStr)){
-                $this->searchStr .= "$isGroupEnd AND $field NOT LIKE $str% ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd AND $field NOT LIKE '$str%' ESCAPE '!'";
             }else{
                 $this->whereStr .= ' ';
-                $this->searchStr .= "$isGroupEnd $field NOT LIKE $str% ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd $field NOT LIKE '$str%' ESCAPE '!'";
             }
-            $this->searchStr .= isset( $this->whereStr) ? " AND $field LIKE $str% ESCAPE '!'" : " WHERE $field LIKE $str% ESCAPE '!'";
+            $this->searchStr .= isset( $this->whereStr) ? " AND $field LIKE '$str%' ESCAPE '!'" : " WHERE $field LIKE $str% ESCAPE '!'";
         }else if ($positionName === 'before'){
             if (isset( $this->whereStr)){
-                $this->searchStr .= "$isGroupEnd AND $field NOT LIKE %$str ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd AND $field NOT LIKE '%$str' ESCAPE '!'";
             }else{
                 $this->whereStr .= ' ';
-                $this->searchStr .= "$isGroupEnd $field NOT LIKE %$str ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd $field NOT LIKE '%$str' ESCAPE '!'";
             }
 
         }else{
             if (isset( $this->whereStr)){
 
-                $this->searchStr .= "$isGroupEnd AND $field NOT LIKE %$str% ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd AND $field NOT LIKE '%$str%' ESCAPE '!'";
 
             }else{
                 $this->whereStr .= ' ';
-                $this->searchStr .= "$isGroupEnd $field NOT LIKE %$str% ESCAPE '!'";
+                $this->searchStr .= "$isGroupEnd $field NOT LIKE '%$str%' ESCAPE '!'";
             }
 
         }
@@ -340,11 +340,11 @@ class Crud{
         $isGroupEnd = isset($this->groupEndStr) && $this->groupEndStr !== "" ? ")" : "";
         $this->groupEndStr = "";
         if ($positionName === 'after'){
-            $this->searchStr .= " $isGroupEnd OR  $field NOT LIKE $str% ESCAPE '!'";
+            $this->searchStr .= " $isGroupEnd OR  $field NOT LIKE '$str%' ESCAPE '!'";
         }else if ($positionName === 'before'){
-            $this->searchStr .= " $isGroupEnd OR $isGroupEnd $field NOT LIKE %$str ESCAPE '!'";
+            $this->searchStr .= " $isGroupEnd OR $isGroupEnd $field NOT LIKE '%$str' ESCAPE '!'";
         }else{
-            $this->searchStr .= " $isGroupEnd OR $isGroupEnd $field NOT LIKE %$str% ESCAPE '!'";
+            $this->searchStr .= " $isGroupEnd OR $isGroupEnd $field NOT LIKE '%$str%' ESCAPE '!'";
         }
 
         return $this;
